@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'chronic'
 require 'sinatra'
 require 'firebase'
