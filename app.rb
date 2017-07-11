@@ -3,6 +3,10 @@ require 'chronic'
 require 'sinatra'
 require 'firebase'
 
+set :bind, '0.0.0.0'
+set :port, 8080
+
+
 base_uri = ENV["FIREBASE_URI"]
 
 firebase = Firebase::Client.new(base_uri)
