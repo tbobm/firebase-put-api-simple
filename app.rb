@@ -17,7 +17,7 @@ get '/' do
 end
 
 get '/test' do
-        'this is a test'
+        'this is a tost'
 end
 
 get '/fb' do
@@ -25,9 +25,15 @@ get '/fb' do
 end
 
 get '/analyze' do
-        puts params
         res = Chronic.parse(params['sentence'])
-        puts res
+        'success'
+        if (res != nil)
+        	"users/" + params['id'] + "/conversations/" + params['convId'] + "/rdv/"
+        	# firebase.push("users/" + params['id'] + "/conversations/" + params['convId'] + "/rdv/", {:date => res})
+        	puts 'success'
+        else
+        	puts 'error'
+        end
 end
 
 get '/info' do
