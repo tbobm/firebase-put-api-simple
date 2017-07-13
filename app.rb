@@ -26,11 +26,9 @@ end
 
 get '/analyze' do
         res = Chronic.parse(params['sentence'])
-        'success'
         if (res != nil)
-        	"users/" + params['id'] + "/conversations/" + params['convId'] + "/rdv/"
-        	# firebase.push("users/" + params['id'] + "/conversations/" + params['convId'] + "/rdv/", {:date => res})
-        	puts 'success'
+        	puts "users/" + params['id'] + "/conversations/" + params['convId'] + "/rdv/"
+        	firebase.push("users/" + params['id'] + "/conversations/" + params['convId'] + "/rdv/", {:date => res})
         else
         	puts 'error'
         end
